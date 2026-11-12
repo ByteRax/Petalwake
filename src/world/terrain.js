@@ -42,6 +42,25 @@ function pixels(img, size) {
   return g.getImageData(0, 0, c.width, c.height).data;
 }
 
+/** Fetch a binary file. Where the whole file is not there (static hosts that refuse files over
+ * ~25 MB), fall back to its split parts (<file>.p0, .p1, ...) and glue them back together. */
+export async function fetchSplit(url) {
+  const res = await fetch(url);
+  if (res.ok) return res.arrayBuffer();
+  const parts = [];
+  for (let i = 0; ; i++) {
+    const part = await fetch(`${url}.p${i}`);
+    if (!part.ok) break;
+    parts.push(await part.arrayBuffer());
+  }
+  if (!parts.length) throw new Error(`${url}: ${res.status}`);
+  const total = parts.reduce((n, b) => n + b.byteLength, 0);
+  const out = new Uint8Array(total);
+  let at = 0;
+  for (const b of parts) { out.set(new Uint8Array(b), at); at += b.byteLength; }
+  return out.buffer;
+}
+
 /** Stack material images into a texture array. */
 export async function materialArrays(base) {
   const meta = await (await fetch(`${base}/materials.json`)).json();
@@ -115,7 +134,7 @@ export class Terrain {
   static async load(renderer, base = './assets') {
     const meta = await (await fetch(`${base}/terrain/meta.json`)).json();
     const [buf, splatImg, lightImg, tintImg, mats] = await Promise.all([
-      fetch(`${base}/terrain/height.u16`).then((r) => r.arrayBuffer()),
+      fetchSplit(`${base}/terrain/height.u16`),
       loadImage(`${base}/terrain/splat.png`),
       loadImage(`${base}/terrain/light.png`),
       loadImage(`${base}/terrain/tint.png`),

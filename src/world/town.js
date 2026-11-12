@@ -11,7 +11,7 @@ import * as THREE from 'three';
 import { U, shared } from '../core/ctx.js';
 import { NOISE, NOISE_TEX, ATMOSPHERE, CLOUD_SHADOW, TERRAIN_LOOKUP, WIND, SHADOW, TOWN_SHADOW } from '../shaders/common.js';
 import { SKY_UNIFORMS } from './sky.js';
-import { materialArrays, loadImage, dataTex } from './terrain.js';
+import { materialArrays, loadImage, dataTex, fetchSplit } from './terrain.js';
 import { SPR } from '../fx/particles.js';
 import { waveHeight } from './water.js';
 
@@ -35,7 +35,7 @@ export class Town {
     const [mats, tiles] = await Promise.all([materialArrays(`${base}/town/tex`), fetch(`${base}/town/tex/materials.json`).then((r) => r.json())]);
     town._material(mats, tiles);
     await Promise.all(index.towns.map(async (t) => {
-      const [meta, buf] = await Promise.all([fetch(`${base}/town/${t.id}.json`).then((r) => r.json()), fetch(`${base}/town/${t.id}.bin`).then((r) => r.arrayBuffer())]);
+      const [meta, buf] = await Promise.all([fetch(`${base}/town/${t.id}.json`).then((r) => r.json()), fetchSplit(`${base}/town/${t.id}.bin`)]);
       town._add(meta, buf);
     }));
     return town;
