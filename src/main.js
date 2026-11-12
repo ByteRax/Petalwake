@@ -177,12 +177,16 @@ async function boot() {
   $('title').classList.remove('loading');
   $('start').hidden = false;
   $('contactBtn').hidden = false;
+  $('otherBtn').hidden = false;
   $('keys').hidden = false;
   $('start').addEventListener('click', start);
   // 交流浮层：点按钮打开，点任意处或按 Esc 关闭
   $('contactBtn').addEventListener('click', () => { $('contact').hidden = false; });
   $('contact').addEventListener('click', () => { $('contact').hidden = true; });
-  window.addEventListener('keydown', (e) => { if (e.code === 'Escape') $('contact').hidden = true; });
+  // 其它游戏浮层：点按钮打开，点游戏名在新标签页打开，点任意处或按 Esc 关闭
+  $('otherBtn').addEventListener('click', () => { $('games').hidden = false; });
+  $('games').addEventListener('click', () => { $('games').hidden = true; });
+  window.addEventListener('keydown', (e) => { if (e.code === 'Escape') { $('contact').hidden = true; $('games').hidden = true; } });
   // 暂停菜单：游戏进行中按 Esc 打开（Esc 也会顺带松开鼠标锁定），再按一次或「继续游戏」恢复
   const pause = {
     open() { game.paused = true; $('pauseMenu').hidden = false; },
