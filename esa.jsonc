@@ -1,6 +1,4 @@
 {
-  // Petalwake 中文复刻版 — 纯静态站点（Three.js ES modules，无需构建）
-  // 仓库根目录即站点根目录，跳过安装与构建步骤，直接托管静态文件。
   "name": "petalwake",
   "installCommand": "",
   "buildCommand": "",

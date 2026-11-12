@@ -1,0 +1,8 @@
+{
+  "name": "petalwake",
+  "private": true,
+  "description": "Petalwake 中文复刻版 — 纯静态站（Three.js ES modules），无需构建",
+  "scripts": {
+    "build": "echo 'static site: nothing to build'"
+  }
+}
