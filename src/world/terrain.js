@@ -42,11 +42,15 @@ function pixels(img, size) {
   return g.getImageData(0, 0, c.width, c.height).data;
 }
 
-/** Fetch a binary file. Where the whole file is not there (static hosts that refuse files over
- * ~25 MB), fall back to its split parts (<file>.p0, .p1, ...) and glue them back together. */
+/** Fetch a binary file. Tries, in order: the file itself (the local checkout, no decompression
+ * cost), a pre-gzipped copy (<file>.gz — what static hosts ship, since these blobs are far
+ * smaller), and last its split parts (<file>.p0, .p1, ...) glued back together (for hosts that
+ * refuse any single file over ~25 MB). */
 export async function fetchSplit(url) {
-  const res = await fetch(url);
+  let res = await fetch(url);
   if (res.ok) return res.arrayBuffer();
+  const gz = await fetch(`${url}.gz`);
+  if (gz.ok) return gunzip(await gz.arrayBuffer());
   const parts = [];
   for (let i = 0; ; i++) {
     const part = await fetch(`${url}.p${i}`);
@@ -59,6 +63,11 @@ export async function fetchSplit(url) {
   let at = 0;
   for (const b of parts) { out.set(new Uint8Array(b), at); at += b.byteLength; }
   return out.buffer;
+}
+
+async function gunzip(buf) {
+  const stream = new Blob([buf]).stream().pipeThrough(new DecompressionStream('gzip'));
+  return new Response(stream).arrayBuffer();
 }
 
 /** Stack material images into a texture array. */
