@@ -93,7 +93,7 @@ async function boot() {
   U.uTownMask0.value = blank;
   U.uTownMask1.value = blank;
 
-  setLoad(0.08, 'raising the island…');
+  setLoad(0.08, '正在升起岛屿……');
   const riderLoad = Rider.load(renderer);
   const propsLoad = Props.load();
   const townLoad = Town.load(renderer);
@@ -102,7 +102,7 @@ async function boot() {
   world.add(terrain.mainView.mesh);
   await tick();
 
-  setLoad(0.4, 'sowing the meadows…');
+  setLoad(0.4, '正在播种草甸……');
   const meadow = (game.meadow = new Meadow(terrain, params.get('q') || 'high'));
   world.add(meadow.group);
 
@@ -111,7 +111,7 @@ async function boot() {
   const clouds = (game.clouds = new CloudBaker(renderer));
   clouds.begin();
   while (!clouds.done) {
-    setLoad(0.45 + 0.4 * clouds.step(2), 'painting the sky…');
+    setLoad(0.45 + 0.4 * clouds.step(2), '正在描绘天空……');
     await tick();
   }
   sky.cloudTex.value = clouds.texture;
@@ -136,7 +136,7 @@ async function boot() {
   world.add(places.group);
   pipeline.overlay.add(places.overlay);
 
-  setLoad(0.9, 'waking the broom…');
+  setLoad(0.9, '正在唤醒扫帚……');
   const rider = (game.rider = await riderLoad);
   pipeline.overlay.add(rider.group, rider.lights);
   pipeline.overlay.environment = sky.bakeEnvironment(renderer);
@@ -304,9 +304,9 @@ function advance(dt, ctl) {
     fx.burst(got.x, got.y, got.z, 90, _sp[1], 0.3 + 0.7 * rider.sunVis, 9);
     flight.gust = Math.min(1, flight.gust + 0.4);
     $('seedCount').textContent = n;
-    if (n === total) toast('every seed caught — the whole island is on the wind');
-    else if (n === 1) toast('a wind seed — there are more out there');
-    else if (n % 6 === 0) toast(`${total - n} seeds still adrift`);
+    if (n === total) toast('集齐了每一枚风种——整座岛都乘风而起');
+    else if (n === 1) toast('一枚风种——外面还有更多');
+    else if (n % 6 === 0) toast(`还有 ${total - n} 枚风种漂泊在外`);
   }
   game.places.update(dt, flight, t);
   game.town.ambient(dt, fx, camera);
@@ -323,10 +323,10 @@ function step(dt) {
   const { input, chase } = game;
   input.update(dt);
   if (game.state === 'play') {
-    if (input.take('KeyC')) toast(`camera · ${chase.next()}`);
-    if (input.take('KeyI')) { input.invert = !input.invert; toast(input.invert ? 'pitch inverted' : 'pitch normal'); }
+    if (input.take('KeyC')) toast(`镜头 · ${chase.next()}`);
+    if (input.take('KeyI')) { input.invert = !input.invert; toast(input.invert ? '俯仰已反转' : '俯仰已恢复'); }
     if (input.take('KeyP')) $('hud').classList.toggle('quiet');
-    if (input.take('KeyM')) toast(game.sound.toggleMute() ? 'sound off' : 'sound on');
+    if (input.take('KeyM')) toast(game.sound.toggleMute() ? '声音已关闭' : '声音已开启');
   }
   advance(dt, game.override || (game.state === 'play' ? input : autopilot()));
   applyFov();
@@ -380,24 +380,24 @@ function placeName() {
   const ground = T.heightAt(p.x, p.z);
   const town = game.town.nameAt(p.x, p.z);
   if (town) return town;
-  if (Math.hypot(p.x - m.peak[0], p.z - m.peak[2]) < 240 && p.y > m.peak[1] - 110) return "Wren's Crown";
+  if (Math.hypot(p.x - m.peak[0], p.z - m.peak[2]) < 240 && p.y > m.peak[1] - 110) return '鹪鹩之冠';
   for (let i = 0; i < m.fjord.length - 1; i++) {
     const a = m.fjord[i], b = m.fjord[i + 1];
     const dx = b[0] - a[0], dz = b[1] - a[1];
     const t = Math.max(0, Math.min(1, ((p.x - a[0]) * dx + (p.z - a[1]) * dz) / (dx * dx + dz * dz)));
-    if (Math.hypot(p.x - a[0] - dx * t, p.z - a[1] - dz * t) < a[2] + 30 && p.y < 170) return 'Hollowmere Sound';
+    if (Math.hypot(p.x - a[0] - dx * t, p.z - a[1] - dz * t) < a[2] + 30 && p.y < 170) return '幽湖海峡';
   }
   if (ground < 0.5) {
-    if (Math.hypot(p.x - m.lagoon[0], p.z - m.lagoon[1]) < m.lagoon[2] + 120) return 'Lace Bay';
-    for (const s of m.stacks) if (Math.hypot(p.x - s[0], p.z - s[1]) < 190) return 'The Sisters';
-    return p.z < -900 ? 'The Shale Coast' : 'The Open Blue';
+    if (Math.hypot(p.x - m.lagoon[0], p.z - m.lagoon[1]) < m.lagoon[2] + 120) return '蕾丝湾';
+    for (const s of m.stacks) if (Math.hypot(p.x - s[0], p.z - s[1]) < 190) return '姐妹石';
+    return p.z < -900 ? '页岩海岸' : '苍茫碧海';
   }
-  if (Math.hypot(p.x - m.mountain[0], p.z - m.mountain[1]) < 950 && ground > 165) return 'Mount Wren';
-  if (ground < 5) return 'Longstrand';
-  if (p.x < -950 && p.z < -500) return 'Lantern Head';
-  if (p.z < -330) return 'Cosmos Down';
-  if (p.x < -700) return 'The Westbowl';
-  return 'Southmeadow';
+  if (Math.hypot(p.x - m.mountain[0], p.z - m.mountain[1]) < 950 && ground > 165) return '鹪鹩山';
+  if (ground < 5) return '长沙岸';
+  if (p.x < -950 && p.z < -500) return '灯笼岬';
+  if (p.z < -330) return '波斯菊丘';
+  if (p.x < -700) return '西山坳';
+  return '南草甸';
 }
 function hud(dt) {
   if (toastTimer > 0 && (toastTimer -= dt) <= 0) $('toast').classList.remove('show');
@@ -502,5 +502,5 @@ game.shot = async (name = 'shot', w = 1920, h = 1080, steps = 2, dt = 1 / 60) =>
 
 boot().catch((e) => {
   console.error(e);
-  $('loadStatus').textContent = `failed to load: ${e.message}`;
+  $('loadStatus').textContent = `加载失败：${e.message}`;
 });

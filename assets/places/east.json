@@ -2,8 +2,8 @@
  "places": [
   {
    "id": "wish_pine",
-   "name": "The Thousand-Wish Pine",
-   "hint": "High on the mountain's western shoulder, something flutters that is not leaves.",
+   "name": "千愿松",
+   "hint": "在山的西肩高处，有什么东西在飘动——那不是叶子。",
    "pos": [
     704.0,
     276.28,
@@ -298,8 +298,8 @@
   },
   {
    "id": "kettle_pools",
-   "name": "The Kettle Pools",
-   "hint": "In a green fold of the eastern foothills the hillside keeps a staircase of warm blue water.",
+   "name": "茶壶泉池",
+   "hint": "东麓一道绿色的褶皱里，山坡藏着一挂温热的蓝色水梯。",
    "pos": [
     1489.0,
     182.23,
@@ -565,8 +565,8 @@
   },
   {
    "id": "starfall",
-   "name": "Starfall",
-   "hint": "Something fell on the north-east meadow long ago. It took a bite out of the cliff on the way in.",
+   "name": "坠星",
+   "hint": "很久以前，有什么东西坠在东北草甸上，落下时还从崖壁上咬掉了一口。",
    "pos": [
     1322.0,
     148.62,
@@ -1054,8 +1054,8 @@
   },
   {
    "id": "conch_garden",
-   "name": "The Conch Garden",
-   "hint": "The smallest island keeps the largest shell, and somebody has been gardening around it.",
+   "name": "海螺园",
+   "hint": "最小的岛上守着最大的海螺，还有人在它周围种起了花木。",
    "pos": [
     562.0,
     1.5,
@@ -2366,8 +2366,8 @@
   },
   {
    "id": "lantern_roots",
-   "name": "Lantern Roots",
-   "hint": "One tree went wading into the lagoon and never came back. Somebody still lights its lamps.",
+   "name": "灯笼树根",
+   "hint": "一棵树蹚进潟湖后再没回来。仍有人为它点灯。",
    "pos": [
     703.0,
     -0.25,
@@ -2782,8 +2782,8 @@
   },
   {
    "id": "whalebone_arbour",
-   "name": "The Whalebone Arbour",
-   "hint": "On the long south-east beach a great traveller rests, and thrift grows where it sang.",
+   "name": "鲸骨藤架",
+   "hint": "在东南的绵长沙滩上，一位巨大的旅人安息着，它曾歌唱过的地方开满了海石竹。",
    "pos": [
     1479.0,
     2.91,

@@ -17,9 +17,9 @@ const RIM_H = 0.35, RIM_W = 0.4;
 // h: height of the platform above the ground; pad: radius of clear floor;
 // yaw: the way she faces once down; approach: heading flown on the way in (degrees, 0 = north)
 const TOWERS = [
-  { id: 'thrift', name: 'Thrift Perch', town: 'Northdown', x: 150, z: -1010, h: 12, pad: 2.6, yaw: 200, approach: 200 },
-  { id: 'heron', name: 'Heron Stair', town: 'Northdown', x: 40, z: -800, h: 22, pad: 2.2, yaw: 120, approach: 300 },
-  { id: 'kestrel', name: 'Kestrel Crown', town: 'Eastreach', x: 430, z: -1080, h: 34, pad: 1.8, yaw: 330, approach: 60 },
+  { id: 'thrift', name: '海石竹栖架', town: '北丘原', x: 150, z: -1010, h: 12, pad: 2.6, yaw: 200, approach: 200 },
+  { id: 'heron', name: '苍鹭阶梯', town: '北丘原', x: 40, z: -800, h: 22, pad: 2.2, yaw: 120, approach: 300 },
+  { id: 'kestrel', name: '红隼之冠', town: '东野原', x: 430, z: -1080, h: 34, pad: 1.8, yaw: 330, approach: 60 },
 ];
 const SHED = { x: 330, z: -935, w: 24, d: 9, h: 6 };
 

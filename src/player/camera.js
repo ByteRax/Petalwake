@@ -17,9 +17,9 @@ const dampAngle = (cur, target, rate, dt) => {
 // zoom = [slow, fast]: how the following distance scales with airspeed (1 at a cruise) - the chase
 // camera closes in when the broom dawdles and drops back as it sprints
 export const CAM_MODES = [
-  { name: 'chase', dist: 7.2, height: 1.65, look: 5.5, drop: 0.55, fov: 70, roll: 0.62, lag: 3.4, zoom: [0.64, 1.42] },
-  { name: 'low', dist: 5.2, height: 0.75, look: 9, drop: 0.25, fov: 82, roll: 0.78, lag: 4.6 },
-  { name: 'far', dist: 14, height: 4.2, look: 6, drop: 1.0, fov: 60, roll: 0.45, lag: 2.6 },
+  { name: '追随', dist: 7.2, height: 1.65, look: 5.5, drop: 0.55, fov: 70, roll: 0.62, lag: 3.4, zoom: [0.64, 1.42] },
+  { name: '低角', dist: 5.2, height: 0.75, look: 9, drop: 0.25, fov: 82, roll: 0.78, lag: 4.6 },
+  { name: '远景', dist: 14, height: 4.2, look: 6, drop: 1.0, fov: 60, roll: 0.45, lag: 2.6 },
 ];
 
 export class ChaseCamera {

@@ -58,7 +58,7 @@ export class Kickflip {
     if (this.unlocked || !g.seeds || g.seeds.count < FLIP.SEEDS) return;
     this.unlocked = true;
     this.store.set('kickflip.v1', true);
-    g.toast?.('Kickflip unlocked: press Q');
+    g.toast?.('踢翻身已解锁：按 Q 触发');
     g.sound?.unlock?.();
   }
 

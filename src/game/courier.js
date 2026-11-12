@@ -68,7 +68,7 @@ export class Courier {
       // a rest stop: a breather for the broom, and a reminder of where she is bound
       f.gust = Math.min(1, f.gust + COURIER.REST_GUST);
       const t = this.target;
-      this.hud.card('rest stop', pad.name, t ? `the parcel is for ${t.name} · ${far(Math.hypot(t.pos.x - pad.pos.x, t.pos.z - pad.pos.z))}` : '', 3.4);
+      this.hud.card('歇脚点', pad.name, t ? `包裹要送往 ${t.name} · 相距 ${far(Math.hypot(t.pos.x - pad.pos.x, t.pos.z - pad.pos.z))}` : '', 3.4);
       return false;
     }
     this.count++;
@@ -85,9 +85,9 @@ export class Courier {
     this.last = pad;
     this.target = this._pick(pad, pad.pos, prev);
     const t = this.target;
-    this.hud.card('delivered', pad.name, t && t !== pad
-      ? `parcel no. ${this.count} · the next is for ${t.name}, ${far(Math.hypot(t.pos.x - pad.pos.x, t.pos.z - pad.pos.z))} off`
-      : `parcel no. ${this.count}`, 4.6);
+    this.hud.card('已送达', pad.name, t && t !== pad
+      ? `第 ${this.count} 件包裹 · 下一件送往 ${t.name}，相距 ${far(Math.hypot(t.pos.x - pad.pos.x, t.pos.z - pad.pos.z))}`
+      : `第 ${this.count} 件包裹`, 4.6);
     this._show();
     return true;
   }

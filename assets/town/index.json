@@ -2,7 +2,7 @@
  "towns": [
   {
    "id": "larkhaven",
-   "name": "Larkhaven",
+   "name": "云雀港",
    "aabb": [
     -212.94,
     -6.65,
@@ -16,7 +16,7 @@
   },
   {
    "id": "cairnwick",
-   "name": "Cairnwick",
+   "name": "石冢村",
    "aabb": [
     91.21,
     122.0,
@@ -30,7 +30,7 @@
   },
   {
    "id": "fields",
-   "name": "The Meadows",
+   "name": "草甸原",
    "aabb": [
     -1101.34,
     -2.97,

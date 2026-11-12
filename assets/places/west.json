@@ -2,8 +2,8 @@
  "places": [
   {
    "id": "blossom_sister",
-   "name": "The Blossom Sister",
-   "hint": "One of the Sisters, north of the shale coast, wears pink in every season.",
+   "name": "繁花姐妹石",
+   "hint": "姐妹石中的一座，立在页岩海岸以北，四季都开着粉花。",
    "pos": [
     -955.0,
     71.76,
@@ -218,8 +218,8 @@
   },
   {
    "id": "farewell_bridge",
-   "name": "Farewell Bridge",
-   "hint": "Where the river takes its last step before the fall, something purple hangs over the water.",
+   "name": "告别桥",
+   "hint": "在河流坠下断崖前的最后一步，有什么紫色的东西悬在水面上。",
    "pos": [
     -175.7,
     113.54,
@@ -1072,8 +1072,8 @@
   },
   {
    "id": "shipless_mast",
-   "name": "The Shipless Mast",
-   "hint": "On the spine of Lantern Head a mast still flies its colours, with no ship beneath it.",
+   "name": "无船之桅",
+   "hint": "灯笼岬的脊线上，一根桅杆仍扬着旗，桅下却无船。",
    "pos": [
     -1466.0,
     145.82,
@@ -1485,8 +1485,8 @@
   },
   {
    "id": "marigold_wreck",
-   "name": "The Wreck of the Marigold",
-   "hint": "A little blue boat came ashore on the Longstrand long ago, and has been in flower ever since.",
+   "name": "金盏花号残骸",
+   "hint": "很久以前，一艘蓝色小船搁浅在长沙岸，从此开花不断。",
    "pos": [
     -1478.0,
     2.79,
@@ -1937,8 +1937,8 @@
   },
   {
    "id": "clock_meadow",
-   "name": "The Clock Meadow",
-   "hint": "In the Westbowl the dandelions have grown taller than a rider, and they still keep the time.",
+   "name": "时钟草甸",
+   "hint": "西山坳里的蒲公英长得比骑手还高，而且仍然按时报时。",
    "pos": [
     -1243.0,
     105.06,
@@ -2217,8 +2217,8 @@
   },
   {
    "id": "open_hand",
-   "name": "The Open Hand",
-   "hint": "On the western cliffs a hand of stone is still held out to the sea.",
+   "name": "张开的手掌",
+   "hint": "西侧悬崖上，一只石凿的手仍向大海伸出。",
    "pos": [
     -2082.0,
     110.98,

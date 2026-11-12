@@ -51,7 +51,7 @@ export class Gameplay {
       leave: () => { this.hush = 2.4; },
       broke: () => { this.hush = 1.2; },
     });
-    if (this.trick.unlocked) this.hud.hint('flip', '<kbd>Q</kbd> kickflip');
+    if (this.trick.unlocked) this.hud.hint('flip', '<kbd>Q</kbd> 踢翻身');
 
     game.land = (id) => this.land(id);
     game.takeoff = () => this.landing.takeoff();
@@ -102,7 +102,7 @@ export class Gameplay {
     if (this.open.length) {
       this.beacons = new Beacons(this.open);
       g.pipeline.overlay.add(this.beacons.group);
-      this.hud.hint('land', '<kbd>Space</kbd><kbd>Space</kbd> land on a tower');
+      this.hud.hint('land', '<kbd>Space</kbd><kbd>Space</kbd> 降落在塔台');
     }
     if (this.landing.busy && !this.open.includes(this.landing.pad)) this.landing.abort();
     this.zone = null;
@@ -126,9 +126,9 @@ export class Gameplay {
     const L = this.landing;
     let html = null;
     if (play) {
-      if (L.state === 'landed') html = '<kbd>Space</kbd> to take off';
-      else if (L.state === 'approach' || L.state === 'settle') html = `coming in to <em>${esc(L.pad.name)}</em><small><kbd>Shift</kbd> breaks off</small>`;
-      else if (L.state === 'fly' && this.zone) html = `<kbd>Space</kbd><span class="x2">×2</span> to land<em>${esc(this.zone.name)}</em>`;
+      if (L.state === 'landed') html = '按 <kbd>Space</kbd> 起飞';
+      else if (L.state === 'approach' || L.state === 'settle') html = `正在进近 <em>${esc(L.pad.name)}</em><small><kbd>Shift</kbd> 中止降落</small>`;
+      else if (L.state === 'fly' && this.zone) html = `<kbd>Space</kbd><span class="x2">×2</span> 降落 <em>${esc(this.zone.name)}</em>`;
     }
     this.hud.prompt(html);
   }
@@ -159,7 +159,7 @@ export class Gameplay {
         // the first job is announced once she is under way
         if (!this.playing) { this.playing = true; this.intro = 2.4; }
         if (this.intro > 0 && (this.intro -= dt) <= 0 && this.courier.target && !L.busy) {
-          this.hud.card('a parcel for', this.courier.target.name, 'follow the gold light · Space twice by a pad to land', 5);
+          this.hud.card('一件包裹要送往', this.courier.target.name, '跟随金色光标 · 在塔台旁连按两次 Space 降落', 5);
         }
       }
       this.beacons.update(dt, f.pos, this.zone, this.courier.target, L.pad);

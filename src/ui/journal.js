@@ -25,11 +25,11 @@ export class Journal {
     this.counter.hidden = places.total === 0;
 
     // ---- the card shown when a treasure is taken
-    this.card = el('div', 'treasure-card', '<p class="tc-kicker">treasure found</p><h2 class="tc-name"></h2><p class="tc-lore"></p><p class="tc-place"></p>');
+    this.card = el('div', 'treasure-card', '<p class="tc-kicker">发现宝藏</p><h2 class="tc-name"></h2><p class="tc-lore"></p><p class="tc-place"></p>');
     document.body.appendChild(this.card);
 
     // ---- the journal page
-    this.page = el('div', 'journal', '<div class="journal-inner"><header><p class="j-kicker">the rider\'s journal</p><h2>Treasures of the island</h2><p class="j-sum"></p></header><div class="j-list"></div><footer><kbd>J</kbd> close</footer></div>');
+    this.page = el('div', 'journal', '<div class="journal-inner"><header><p class="j-kicker">骑手手记</p><h2>岛上宝藏</h2><p class="j-sum"></p></header><div class="j-list"></div><footer><kbd>J</kbd> 关闭</footer></div>');
     this.page.hidden = true;
     document.body.appendChild(this.page);
     this.page.addEventListener('click', () => this.toggle(false));
@@ -52,7 +52,7 @@ export class Journal {
   refresh() {
     const n = this.places.count, total = this.places.total;
     this.counter.querySelector('.treasures-n').textContent = n;
-    this.counter.querySelector('.treasures-of').textContent = `/ ${total} treasures`;
+    this.counter.querySelector('.treasures-of').textContent = `/ 共 ${total} 处宝藏`;
     this.counter.title = `Treasures ${n}/${total}`;
     if (this.open) this._fill();
   }
@@ -60,13 +60,13 @@ export class Journal {
   _fill() {
     const list = this.page.querySelector('.j-list');
     const n = this.places.count, total = this.places.total;
-    this.page.querySelector('.j-sum').textContent = n === total ? `all ${total} found` : `${n} of ${total} found`;
+    this.page.querySelector('.j-sum').textContent = n === total ? `已集齐全部 ${total} 处` : `已寻得 ${n} / ${total} 处`;
     list.innerHTML = this.places.list.filter((p) => p.treasure).map((p) => {
       const t = p.treasure;
       if (t.found) {
         return `<article class="j-entry found" style="--tint:${css(t.tint)}"><span class="j-gem"></span><div><h3>${esc(t.def.name)}</h3><p class="j-where">${esc(p.def.name)}</p><p class="j-lore">${esc(t.def.lore)}</p></div></article>`;
       }
-      return `<article class="j-entry"><span class="j-gem"></span><div><h3>${p.visited ? esc(p.def.name) : 'Not yet found'}</h3><p class="j-lore">${esc(p.def.hint || 'Somewhere on the island.')}</p></div></article>`;
+      return `<article class="j-entry"><span class="j-gem"></span><div><h3>${p.visited ? esc(p.def.name) : '尚未寻获'}</h3><p class="j-lore">${esc(p.def.hint || '岛上的某个角落。')}</p></div></article>`;
     }).join('');
   }
 
@@ -104,7 +104,7 @@ export class Journal {
     this.counter.classList.remove('bump');
     void this.counter.offsetWidth;
     this.counter.classList.add('bump');
-    if (this.places.count === this.places.total) setTimeout(() => this.game.toast?.('every treasure found — the island has no secrets left'), 8600);
+    if (this.places.count === this.places.total) setTimeout(() => this.game.toast?.('集齐了所有宝藏——岛上再无秘密'), 8600);
   }
 
   update(dt) {

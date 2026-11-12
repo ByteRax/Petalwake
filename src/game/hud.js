@@ -3,7 +3,7 @@
 // for the trick. The elements live in index.html; a missing one is simply skipped.
 const $ = (id) => document.getElementById(id);
 
-export const far = (m) => (m < 995 ? `${Math.max(10, Math.round(m / 10) * 10)} m` : `${(m / 1000).toFixed(1)} km`);
+export const far = (m) => (m < 995 ? `${Math.max(10, Math.round(m / 10) * 10)} 米` : `${(m / 1000).toFixed(1)} 千米`);
 
 export class Hud {
   constructor() {
