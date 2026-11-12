@@ -176,8 +176,13 @@ async function boot() {
   game.ready = true;
   $('title').classList.remove('loading');
   $('start').hidden = false;
+  $('contactBtn').hidden = false;
   $('keys').hidden = false;
   $('start').addEventListener('click', start);
+  // 交流浮层：点按钮打开，点任意处或按 Esc 关闭
+  $('contactBtn').addEventListener('click', () => { $('contact').hidden = false; });
+  $('contact').addEventListener('click', () => { $('contact').hidden = true; });
+  window.addEventListener('keydown', (e) => { if (e.code === 'Escape') $('contact').hidden = true; });
   if (params.has('debug')) $('title').classList.add('gone');
   if (params.has('play')) start();
   requestAnimationFrame(frame);

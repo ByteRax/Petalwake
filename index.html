@@ -46,7 +46,10 @@
     <h1>花瓣航迹</h1>
     <div class="bar"><div class="bar-fill" id="loadFill"></div></div>
     <p class="status" id="loadStatus">正在聚风……</p>
-    <button id="start" hidden>起飞</button>
+    <div class="title-actions">
+      <button id="start" hidden>起飞</button>
+      <button id="contactBtn" hidden>交流</button>
+    </div>
     <div class="keys" id="keys" hidden>
       <div><kbd>W</kbd><kbd>S</kbd> 俯冲 · 爬升</div>
       <div><kbd>A</kbd><kbd>D</kbd> 转向</div>
@@ -55,6 +58,17 @@
       <div><kbd>鼠标</kbd> 转向 · <kbd>C</kbd> 镜头 · <kbd>I</kbd> 反转俯仰</div>
       <div><kbd>P</kbd> 隐藏界面 · <kbd>M</kbd> 静音 · <kbd>J</kbd> 手记</div>
     </div>
+  </div>
+</div>
+
+<div id="contact" hidden>
+  <div class="contact-panel">
+    <p class="contact-kicker">加入交流</p>
+    <div class="contact-cards">
+      <figure class="contact-card"><img src="./assets/ui/wechat.webp" alt="微信群二维码"><figcaption>微信群</figcaption></figure>
+      <figure class="contact-card"><img src="./assets/ui/ai_qq.webp" alt="QQ 群二维码"><figcaption>QQ 群</figcaption></figure>
+    </div>
+    <p class="contact-hint">点击任意处关闭</p>
   </div>
 </div>
 
