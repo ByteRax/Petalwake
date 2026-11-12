@@ -157,8 +157,8 @@
    ],
    "treasure": {
     "id": "unspilled_cup",
-    "name": "The Unspilled Cup",
-    "lore": "However the gale howls around the Sister, the tea in this cup has never so much as rippled.",
+    "name": "未洒之盏",
+    "lore": "任凭狂风在姐妹石四周呼啸，这只杯里的茶从未起过一丝涟漪。",
     "model": "teacup",
     "pos": [
      -944.5,
@@ -962,8 +962,8 @@
    ],
    "treasure": {
     "id": "rain_thimble",
-    "name": "Thimble of the First Rain",
-    "lore": "Still brimming with the first rain that ever fell on the island. It has been trying to reach the sea ever since.",
+    "name": "初雨顶针",
+    "lore": "仍盛满这座岛落下的第一场雨。从那时起，它就一直在设法奔向大海。",
     "model": "thimble",
     "pos": [
      -197.38,
@@ -1414,8 +1414,8 @@
    ],
    "treasure": {
     "id": "gale_whistle",
-    "name": "The Gale-Whistle",
-    "lore": "Blow it once and the wind remembers your name. Blow it twice and it comes looking for you.",
+    "name": "疾风哨",
+    "lore": "吹响一次，风会记得你的名字。吹响两次，风就会来找你。",
     "model": "whistle",
     "pos": [
      -1475.34,
@@ -1876,8 +1876,8 @@
    ],
    "treasure": {
     "id": "tide_knot",
-    "name": "The Seven-Tide Knot",
-    "lore": "Seven tides were tied into this rope by someone who wanted the sea to stay. Nobody has dared to undo it.",
+    "name": "七潮之结",
+    "lore": "有人想留住大海，把七次潮汐系进了这根绳子里。至今没人敢把它解开。",
     "model": "tide_knot",
     "pos": [
      -1473.65,
@@ -2156,8 +2156,8 @@
    ],
    "treasure": {
     "id": "lost_hour",
-    "name": "The Hour That Got Away",
-    "lore": "A brass hourglass whose sand runs upward, very slowly. Nobody has ever seen it finish.",
+    "name": "溜走的时辰",
+    "lore": "一只黄铜沙漏，沙子极慢地向上涨。从没有人见过它流完。",
     "model": "hourglass",
     "pos": [
      -1243.23,
@@ -2420,8 +2420,8 @@
    ],
    "treasure": {
     "id": "storm_marble",
-    "name": "The Storm Marble",
-    "lore": "A glass marble with a thunderstorm the size of a thumbnail inside. The giant lost the game and kept the prize.",
+    "name": "风暴弹珠",
+    "lore": "一颗玻璃弹珠，里面关着拇指大的雷雨。巨人输掉了那局游戏，却留下了奖品。",
     "model": "storm_marble",
     "pos": [
      -2082.27,

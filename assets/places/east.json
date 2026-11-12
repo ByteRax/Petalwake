@@ -262,8 +262,8 @@
    ],
    "treasure": {
     "id": "windwrights_bell",
-    "name": "The Windwright's Bell",
-    "lore": "A thumb-worn bronze bell with no clapper. The pine rings it anyway, on nights when the wind changes its mind.",
+    "name": "御风铃",
+    "lore": "一只被拇指磨亮的青铜铃，没有铃舌。可在风改变主意的夜晚，松树仍会摇响它。",
     "model": "bell",
     "pos": [
      692.4,
@@ -481,8 +481,8 @@
    ],
    "treasure": {
     "id": "ember_egg",
-    "name": "The Ember Egg",
-    "lore": "A river stone that has never once gone cold. Shepherds carried it in their coats through seven winters and argued over whose turn it was.",
+    "name": "余温之卵",
+    "lore": "一颗从未凉过的河石。牧羊人把它揣在怀里度过七个冬天，还为该谁保管争个不停。",
     "model": "emberstone",
     "pos": [
      1481.35,
@@ -950,8 +950,8 @@
    ],
    "treasure": {
     "id": "sky_splinter",
-    "name": "The Sky Splinter",
-    "lore": "A sliver of the star that fell here. Hold it to your ear and it is still humming the note it made coming down.",
+    "name": "天穹碎片",
+    "lore": "坠落的星辰留下的一片碎屑。贴在耳边，还能听见它坠落时那一声嗡鸣。",
     "model": "splinter",
     "pos": [
      1361.0,
@@ -2330,8 +2330,8 @@
    ],
    "treasure": {
     "id": "moon_pearl",
-    "name": "The Moon Pearl",
-    "lore": "Grown over a hundred years of tides around one grain of sand that the full moon happened to be shining on.",
+    "name": "月华珠",
+    "lore": "满月照到一粒沙，潮汐用一百年把它裹成了珍珠。",
     "model": "pearl",
     "pos": [
      549.95,
@@ -2729,8 +2729,8 @@
    ],
    "treasure": {
     "id": "ferrylight",
-    "name": "The Ferrylight",
-    "lore": "The lamp of a ferry that ran before there was a town to run to. It has only ever needed lighting once.",
+    "name": "渡灯",
+    "lore": "一盏比渡口更老的灯，那时还没有可以对岸的镇子。它一生只需要点一次。",
     "model": "ferrylight",
     "pos": [
      698.75,
@@ -3135,8 +3135,8 @@
    ],
    "treasure": {
     "id": "song_bone",
-    "name": "The Song Bone",
-    "lore": "A whale's ear-bone, sanded smooth by the tides. On a still evening it gives back the songs it heard, very slowly.",
+    "name": "歌之骨",
+    "lore": "一块鲸的耳骨，被潮水磨得温润。无风的傍晚，它会慢慢还回听过的歌。",
     "model": "songbone",
     "pos": [
      1488.05,
